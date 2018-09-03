@@ -10,4 +10,8 @@ WORKDIR /app
 RUN pip install -r requirements.txt
 
 ENTRYPOINT ["python"]
+
+RUN useradd -ms /bin/bash myuser
+USER myuser
+
 CMD ["app.py"]
