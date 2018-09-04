@@ -9,9 +9,7 @@ WORKDIR /app
 
 RUN pip install -r requirements.txt
 
-ENTRYPOINT ["python"]
-
 RUN useradd -ms /bin/bash myuser
 USER myuser
 
-CMD ["app.py"]
+CMD ["/bin/bash", "-c", "gunicorn -b 0.0.0.0:$PORT app:app"]
