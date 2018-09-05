@@ -7,16 +7,19 @@
 
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
-
+        {% block head %}{% endblock %}
         <title>{{ title }}</title>
     </head>
     <body>
-        <!-- Navbar -->
-        {% include 'includes/_navbar.html' %}
+        <header>
+            <!-- Navbar -->
+            {% include 'includes/_navbar.html' %}
+        </header>
 
-        <div class="container">
+        <main>
             {% block content %}{% endblock %}
-        </div>
+            {% block footer %}{% endblock %}
+        </main>
 
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
