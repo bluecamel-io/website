@@ -2,3 +2,4 @@ Flask==1.0
 jinja2==2.10
 gunicorn==19.9
 WTForms==2.2.1
+sendgrid

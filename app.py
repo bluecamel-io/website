@@ -31,7 +31,7 @@ def about():
 
 @app.route('/contact', methods=['GET', 'POST'])
 def contact():
-    
+
     if request.method == 'POST':
         sg = sendgrid.SendGridAPIClient(apikey=os.environ.get('SENDGRID_API_KEY'))
         form = ContactForm()
@@ -41,20 +41,21 @@ def contact():
 
         #one of our emails to receive clients email --- change to your email if you wanna test it yourself
         one_of_our_emails = "alecross89@gmail.com"
-        
+
         # getting the message and subject of the email
         content_of_email = request.form.get('message')
-        email_subject = request.form.get('subject')
-        
+        email_subject = '[Data Science Consulting]: {subject}'.format(
+            subject=request.form.get('subject'))
+
         # passing client email into Email class
         from_email = Email(client_email)
 
         # passing message of email to Content class
         content = Content("text/plain", content_of_email)
-        
+
         # passing our email to Email class
         to_email = Email(one_of_our_emails)
-    
+
         mail = Mail(from_email, email_subject, to_email, content)
         response = sg.client.mail.send.post(request_body=mail.get())
         print(response.status_code)
@@ -70,4 +71,3 @@ def contact():
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port=os.getenv('PORT'))
-
