@@ -34,14 +34,16 @@ def contact():
 
     if request.method == 'POST':
         sg = sendgrid.SendGridAPIClient(apikey=os.environ.get('SENDGRID_API_KEY'))
+        # sg = sendgrid.SendGridAPIClient(apikey=)
         form = ContactForm()
 
         #email user provideds --- for testing, put your email into the form
         client_email = request.form.get('email')
 
         #one of our emails to receive clients email --- change to your email if you wanna test it yourself
-        one_of_our_emails = "alecross89@gmail.com"
 
+        one_of_our_emails = ["alecross89@gmail.com", "andrew.ross.mail@gmail.com"]
+        
         # getting the message and subject of the email
         content_of_email = request.form.get('message')
         email_subject = '[Data Science Consulting]: {subject}'.format(
@@ -52,15 +54,18 @@ def contact():
 
         # passing message of email to Content class
         content = Content("text/plain", content_of_email)
+        
+        for e_mail in one_of_our_emails:
 
-        # passing our email to Email class
-        to_email = Email(one_of_our_emails)
+            # passing our email to Email class
+            to_email = Email(e_mail)
+        
+            mail = Mail(from_email, email_subject, to_email, content)
+            response = sg.client.mail.send.post(request_body=mail.get())
+            print(response.status_code)
+            print(response.body)
+            print(response.headers)
 
-        mail = Mail(from_email, email_subject, to_email, content)
-        response = sg.client.mail.send.post(request_body=mail.get())
-        print(response.status_code)
-        print(response.body)
-        print(response.headers)
         return 'form submitted'
     else:
         form = ContactForm()
