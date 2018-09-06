@@ -1,21 +1,12 @@
 {% extends "base.html" %}
 
 {% block content %}
-<<<<<<< HEAD
-    <div class="container">
-    <h1>Contact Us</h1>
-    <form id="contact-form" method="post" action="contact.php" role="form">
-||||||| merged common ancestors
-    <h1>Contact Us</h1>
-    <form id="contact-form" method="post" action="contact.php" role="form">
-=======
     {% from 'includes/_form_helpers.html' import render_field %}
     <div class="container">
         <h1 style="padding-top: 4rem; padding-bottom: 1rem;">Contact Us</h1>
         <form id="contact-form" method="post" action="{{ url_for('contact') }}" role="form">
             {# {{ form.hidden_tag() }} #}
             <div class="messages"></div>
->>>>>>> d92e351b9a1c5ea30982062d82f6068a1fbaa6a4
 
             <div class="controls">
 
@@ -53,20 +44,7 @@
                     </div>
                 </div>
             </div>
-<<<<<<< HEAD
-        </div>
-    </div>
-    
-    </form>
-    <!--Section: Contact v.2-->
-
-||||||| merged common ancestors
-        </div>
-    
-    </form>
-=======
 
         </form>
     </div>
->>>>>>> d92e351b9a1c5ea30982062d82f6068a1fbaa6a4
 {% endblock %}
