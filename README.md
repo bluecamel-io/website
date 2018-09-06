@@ -1,5 +1,7 @@
 # ds_website
 
+------------ only need the following until the api_key is set in heroku, then you presumeably wont need it ------------
+
 So to get the email to send we have to have the API key.  I'll share the google doc that has the api_key, username and password for SendGrid, that way you guys can fool around with stuff as well.
 
 Once you have the api_key, run the following code in your environment
