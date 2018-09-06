@@ -2,47 +2,49 @@
 
 {% block content %}
     {% from 'includes/_form_helpers.html' import render_field %}
-    <h1 style="padding-top: 4rem; padding-bottom: 1rem;">Contact Us</h1>
-    <form id="contact-form" method="post" action="{{ url_for('contact') }}" role="form">
-        {# {{ form.hidden_tag() }} #}
-        <div class="messages"></div>
+    <div class="container">
+        <h1 style="padding-top: 4rem; padding-bottom: 1rem;">Contact Us</h1>
+        <form id="contact-form" method="post" action="{{ url_for('contact') }}" role="form">
+            {# {{ form.hidden_tag() }} #}
+            <div class="messages"></div>
 
-        <div class="controls">
+            <div class="controls">
 
-            <div class="row">
-                <div class="col-md-6">
-                    {{ render_field(form.first_name, id="form_name", type="text", class_="form-control", placeholder="Please enter your First Name", required="required") }}
+                <div class="row">
+                    <div class="col-md-6">
+                        {{ render_field(form.first_name, id="form_name", type="text", class_="form-control", placeholder="Please enter your First Name", required="required") }}
+                    </div>
+                    <div class="col-md-6">
+                        {{ render_field(form.last_name, id="form_lastname", type="text", class_="form-control", placeholder="Please enter your Last Name", required="required") }}
+                    </div>
                 </div>
-                <div class="col-md-6">
-                    {{ render_field(form.last_name, id="form_lastname", type="text", class_="form-control", placeholder="Please enter your Last Name", required="required") }}
+
+                <div class="row">
+                    <div class="col-md-6">
+                        {{ render_field(form.email, id="form_email", type="email", class_="form-control", placeholder="Please enter your email", required="required") }}
+                    </div>
+                    <div class="col-md-6">
+                        {{ render_field(form.subject, id="form_subject", type="text", class_="form-control", placeholder="Please specify your need.", required="required") }}
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        {{ render_field(form.message, id="form_message", type="text", class_="form-control", placeholder="Leave us a message!", required="required", rows="4") }}
+                    </div>
+                    <div class="col-md-12">
+                        <input type="submit" class="btn btn-success btn-send" value="Send message">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <p class="text-muted">
+                            <strong>*</strong> These fields are required.
+                    </div>
                 </div>
             </div>
 
-            <div class="row">
-                <div class="col-md-6">
-                    {{ render_field(form.email, id="form_email", type="email", class_="form-control", placeholder="Please enter your email", required="required") }}
-                </div>
-                <div class="col-md-6">
-                    {{ render_field(form.subject, id="form_subject", type="text", class_="form-control", placeholder="Please specify your need.", required="required") }}
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-md-12">
-                    {{ render_field(form.message, id="form_message", type="text", class_="form-control", placeholder="Leave us a message!", required="required", rows="4") }}
-                </div>
-                <div class="col-md-12">
-                    <input type="submit" class="btn btn-success btn-send" value="Send message">
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-md-12">
-                    <p class="text-muted">
-                        <strong>*</strong> These fields are required.
-                </div>
-            </div>
-        </div>
-
-    </form>
+        </form>
+    </div>
 {% endblock %}
