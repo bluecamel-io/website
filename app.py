@@ -7,6 +7,7 @@ from forms import ContactForm
 app = Flask(__name__)
 
 @app.route('/')
+@app.route('/index')
 def index():
     return render_template('index.html', title='Home')
 
@@ -33,9 +34,6 @@ def contact():
             'contact.html',
             title='Contact',
             form=form)
-    # placeholder="Please enter your First Name"
-    # data-error="First Name is required."
-    # required="required"
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port=os.getenv('PORT'))
