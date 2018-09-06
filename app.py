@@ -42,26 +42,32 @@ def contact():
 
         #one of our emails to receive clients email --- change to your email if you wanna test it yourself
 
-        one_of_our_emails = ["alecross89@gmail.com", "andrew.ross.mail@gmail.com"]
-        
+        one_of_our_emails = [
+            "alecross89@gmail.com",
+            "andrew.ross.mail@gmail.com"]
+
         # getting the message and subject of the email
         content_of_email = request.form.get('message')
-        email_subject = '[Data Science Consulting]: {subject}'.format(
-            subject=request.form.get('subject'))
+        email_subject = '[Data Science Consulting]: ' + \
+            '{first} {last} - {subject}'.format(
+                first=request.form.get('first_name'),
+                last=request.form.get('last_name'),
+                subject=request.form.get('subject'))
 
         # passing client email into Email class
         from_email = Email(client_email)
 
         # passing message of email to Content class
         content = Content("text/plain", content_of_email)
-        
+
         for e_mail in one_of_our_emails:
 
             # passing our email to Email class
             to_email = Email(e_mail)
-        
+
             mail = Mail(from_email, email_subject, to_email, content)
             response = sg.client.mail.send.post(request_body=mail.get())
+
             print(response.status_code)
             print(response.body)
             print(response.headers)
