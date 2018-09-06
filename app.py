@@ -33,46 +33,45 @@ def about():
 def contact():
 
     if request.method == 'POST':
-        sg = sendgrid.SendGridAPIClient(apikey=os.environ.get('SENDGRID_API_KEY'))
-        # sg = sendgrid.SendGridAPIClient(apikey=)
         form = ContactForm()
 
-        #email user provideds --- for testing, put your email into the form
-        client_email = request.form.get('email')
+        sg = sendgrid.SendGridAPIClient(
+            apikey=os.environ.get('SENDGRID_API_KEY'))
 
-        #one of our emails to receive clients email --- change to your email if you wanna test it yourself
-
-        one_of_our_emails = [
-            "alecross89@gmail.com",
-            "andrew.ross.mail@gmail.com"]
-
-        # getting the message and subject of the email
-        content_of_email = request.form.get('message')
-        email_subject = '[Data Science Consulting]: ' + \
-            '{first} {last} - {subject}'.format(
+        # email user provides
+        from_email = Email(
+            email=request.form.get('email'),
+            name='{first} {last}'.format(
                 first=request.form.get('first_name'),
-                last=request.form.get('last_name'),
-                subject=request.form.get('subject'))
+                last=request.form.get('last_name')))
 
-        # passing client email into Email class
-        from_email = Email(client_email)
+        # format the email subject line
+        email_subject = '[Data Science Consulting]: ' + \
+            '{subject}'.format(subject=request.form.get('subject'))
 
-        # passing message of email to Content class
-        content = Content("text/plain", content_of_email)
+        # retrieve the email body
+        content = Content("text/plain", request.form.get('message'))
 
-        for e_mail in one_of_our_emails:
+        # create a personalization object to hold all the recipient emails
+        to_emails = [
+            Email(email='providence.can@gmail.com ', name='Gideon Providence'),
+            Email(email='alecross89@gmail.com', name='Alec Ross'),
+            Email(email='andrew.ross.mail@gmail.com', name='Andrew Ross')]
+        personalization = Personalization()
+        for email in to_emails:
+            personalization.add_to(email)
 
-            # passing our email to Email class
-            to_email = Email(e_mail)
+        # populate the Mail object
+        mail = Mail(
+            from_email=from_email,
+            subject=email_subject,
+            to_email=None,
+            content=content)
+        mail.add_personalization(personalization)
 
-            mail = Mail(from_email, email_subject, to_email, content)
-            response = sg.client.mail.send.post(request_body=mail.get())
+        response = sg.client.mail.send.post(request_body=mail.get())
 
-            print(response.status_code)
-            print(response.body)
-            print(response.headers)
-
-        return 'form submitted'
+        return 'form submitted' # render_template()
     else:
         form = ContactForm()
         return render_template(
