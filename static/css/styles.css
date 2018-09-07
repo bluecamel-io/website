@@ -90,6 +90,7 @@ body {
     height: 24rem;
     position: relative;
     margin-bottom: 4rem;
+    border-radius: 0;
 }
 
 .jumbotron .container {
@@ -117,6 +118,15 @@ body {
     line-height: 1.4;
 }
 
+.btn-primary {
+    background-color: #ff6fa5;
+    border-color: #ff6fa5;
+}
+
+.btn-secondary {
+    background-color: #007bff;
+    border-color: #007bff;
+}
 
 /* RESPONSIVE CSS
 -------------------------------------------------- */

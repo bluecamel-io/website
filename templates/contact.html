@@ -3,7 +3,9 @@
 {% block content %}
     {% from 'includes/_form_helpers.html' import render_field %}
     <div class="container">
+
         <h1 style="padding-top: 4rem; padding-bottom: 1rem;">Contact Us</h1>
+
         <form id="contact-form" method="post" action="{{ url_for('contact') }}" role="form">
             {# {{ form.hidden_tag() }} #}
             <div class="messages"></div>
@@ -44,7 +46,15 @@
                     </div>
                 </div>
             </div>
-
         </form>
+
+        <hr class="featurette-divider">
+
     </div>
+
+    <!-- FOOTER -->
+    <footer class="container">
+        <p class="float-right"><a href="#">Back to top</a></p>
+        <p>&copy; 2017-2018 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+    </footer>
 {% endblock %}
