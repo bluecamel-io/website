@@ -71,7 +71,7 @@ def contact():
 
         response = sg.client.mail.send.post(request_body=mail.get())
 
-        return 'form submitted' # render_template()
+        return render_template('form_submitted.html', title='Form_Submitted')
     else:
         form = ContactForm()
         return render_template(
