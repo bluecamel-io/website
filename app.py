@@ -28,7 +28,6 @@ def healthcare():
 
 @app.route('/about')
 def about():
-    # return abort(404) <--------- comment out render_template and return this statement
     return render_template('about.html', title='About')
 
 @app.route('/contact', methods=['GET', 'POST'])
@@ -83,7 +82,7 @@ def contact():
 
 @app.errorhandler(404)
 def page_not_found(e):
-    return render_template('404.html')
+    return render_template('404.html'), 404
 
 if __name__ == '__main__':
-    app.run(debug=False, host='0.0.0.0', port=os.getenv('PORT'))
+    app.run(debug=True, host='0.0.0.0', port=os.getenv('PORT'))
