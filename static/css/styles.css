@@ -61,6 +61,23 @@ body {
   margin-left: .75rem;
 }
 
+.marketing .card {
+    margin-top: 2rem;
+}
+
+.marketing h1 {
+    margin-bottom: -1rem;
+}
+
+/* Services
+-------------------------------------------------- */
+
+.services-heading {
+    margin-bottom: -1rem;
+    font-weight: 400;
+    font-size: 3rem;
+}
+
 
 /* Featurettes
 -------------------------------------------------- */
@@ -89,7 +106,7 @@ body {
     background-size: 100% 100%;
     height: 24rem;
     position: relative;
-    margin-bottom: 4rem;
+    margin-bottom: 2rem;
     border-radius: 0;
 }
 
