@@ -145,6 +145,22 @@ body {
     border-color: #007bff;
 }
 
+.svg-container-outside {
+    /* min-width: 40rem; */
+    overflow-x: scroll;
+    overflow-y: hidden;
+}
+
+.svg-container-inside {
+    min-width: 40rem;
+}
+/* svg {
+  width: 100vw;
+  height: (height/width * 100)vw;
+  max-height: 100vh;
+  max-width: (width/height * 100)vh;
+} */
+
 /* RESPONSIVE CSS
 -------------------------------------------------- */
 
