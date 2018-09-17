@@ -17,14 +17,14 @@ app = Flask(__name__)
 def index():
     return render_template('index.html', title='Home')
 
-@app.route('/ecommerce')
-def ecommerce():
-    return render_template('ecommerce.html', title='E-commerce')
-
-
-@app.route('/healthcare')
-def healthcare():
-    return render_template('healthcare.html', title='Healthcare')
+# @app.route('/ecommerce')
+# def ecommerce():
+#     return render_template('ecommerce.html', title='E-commerce')
+#
+#
+# @app.route('/healthcare')
+# def healthcare():
+#     return render_template('healthcare.html', title='Healthcare')
 
 @app.route('/about')
 def about():
