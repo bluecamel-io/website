@@ -236,9 +236,39 @@ https://www.w3schools.com/howto/howto_css_hero_image.asp
         </div>
     </div>
 
-    <div class="row featurette">
+    <div class="row featurette circle-1-text featurette-active">
       <div class="col-md-7">
-        <h2 class="featurette-heading">Data Science, fam. <span class="text-muted">It'll blow your mind.</span></h2>
+        <h2 class="featurette-heading">Initial Consult. <span class="text-muted">Set the wheels in motion!</span></h2>
+        <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+      </div>
+      <div class="col-md-5 featurette-img">
+        <img class="featurette-image img-fluid mx-auto" src="{{ url_for('static', filename='images/featurette1.jpg') }}" alt="Generic placeholder image">
+      </div>
+    </div>
+
+    <div class="row featurette circle-2-text">
+      <div class="col-md-7">
+        <h2 class="featurette-heading">Goal Setting. <span class="text-muted">Create high-impact action items.</span></h2>
+        <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+      </div>
+      <div class="col-md-5 featurette-img">
+        <img class="featurette-image img-fluid mx-auto" src="{{ url_for('static', filename='images/featurette1.jpg') }}" alt="Generic placeholder image">
+      </div>
+    </div>
+
+    <div class="row featurette circle-3-text">
+      <div class="col-md-7">
+        <h2 class="featurette-heading">Strategizing. <span class="text-muted">Move forward with an air-tight plan.</span></h2>
+        <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+      </div>
+      <div class="col-md-5 featurette-img">
+        <img class="featurette-image img-fluid mx-auto" src="{{ url_for('static', filename='images/featurette1.jpg') }}" alt="Generic placeholder image">
+      </div>
+    </div>
+
+    <div class="row featurette circle-4-text">
+      <div class="col-md-7">
+        <h2 class="featurette-heading">Analysis. <span class="text-muted">Drive growth with insights.</span></h2>
         <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
       </div>
       <div class="col-md-5 featurette-img">
@@ -248,26 +278,10 @@ https://www.w3schools.com/howto/howto_css_hero_image.asp
 
     <hr class="featurette-divider">
 
-    <div class="row featurette">
-      <div class="col-md-7 order-md-2">
-        <h2 class="featurette-heading">Insights, bro. <span class="text-muted">See for yourself.</span></h2>
-        <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-      </div>
-      <div class="col-md-5 order-md-1 featurette-img">
-        <img class="featurette-image img-fluid mx-auto" src="{{ url_for('static', filename='images/featurette2.jpg') }}" alt="Generic placeholder image">
-      </div>
-    </div>
-
-    <hr class="featurette-divider">
-
-    <div class="row featurette">
-      <div class="col-md-7">
-        <h2 class="featurette-heading">Analytics, man. <span class="text-muted">Checkmate.</span></h2>
-        <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-      </div>
-      <div class="col-md-5 featurette-img">
-        <img class="featurette-image img-fluid mx-auto" src="{{ url_for('static', filename='images/featurette3.jpg') }}" alt="Generic placeholder image">
-      </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <h2 class="services-heading" style="margin-bottom: 2rem;">What Sets Us Apart</h2>
+        </div>
     </div>
 
     <hr class="featurette-divider">
@@ -289,8 +303,9 @@ https://www.w3schools.com/howto/howto_css_hero_image.asp
     // var circleButtons = document.getElementsByClassName("circle-btn");
     var circles = document.getElementsByClassName("circle");
     var secondary = document.getElementsByClassName("secondary")
+    var our_process_elts = document.getElementsByClassName("featurette")
 
-    console.log(secondary)
+    console.log(our_process_elts)
 
     $(".circle-btn").click(function() {
         $('html,body').animate({
@@ -299,11 +314,9 @@ https://www.w3schools.com/howto/howto_css_hero_image.asp
     });
 
     function color_circle(clicked_id) {
-        clicked_circles = document.getElementsByClassName(clicked_id);
-        clicked_secondary = document.getElementsByClassName('secondary-' + clicked_id);
-        console.log(clicked_secondary)
-        // .setAttribute("fill", "red")
-        // console.log(circles)
+        var clicked_circles = document.getElementsByClassName(clicked_id);
+        var clicked_secondary = document.getElementsByClassName('secondary-' + clicked_id);
+        var clicked_text = document.getElementsByClassName(clicked_id + '-text')
 
         var i;
         for (i = 0; i < circles.length; i++) {
@@ -321,6 +334,11 @@ https://www.w3schools.com/howto/howto_css_hero_image.asp
         for (i = 0; i < clicked_secondary.length; i++) {
             clicked_secondary[i].setAttribute("opacity", "1");
         };
+
+        for (i = 0; i < our_process_elts.length; i++) {
+            our_process_elts[i].classList.remove("featurette-active");
+        }
+        clicked_text[0].classList.add("featurette-active");
     };
 </script>
 {% endblock %}

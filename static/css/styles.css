@@ -93,6 +93,14 @@ body {
   letter-spacing: -.05rem;
 }
 
+.featurette {
+    display: none;
+}
+
+.featurette-active {
+    display: flex;
+}
+
 /* Jumbotron
 -------------------------------------------------- */
 .jumbotron {
