@@ -33,14 +33,14 @@ https://www.w3schools.com/howto/howto_css_hero_image.asp
                 <div class="card-body">
                     <h4 class="card-title">Business Analysis</h4>
                     <hr>
-                    <p class="card-text">Identify your most & least profitable areas to optimize future ad spend, and improve weak spots.</p>
+                    <p class="lead">Identify your most & least profitable areas to optimize future ad spend, and improve weak spots.</p>
                 </div>
             </div>
             <div class="card shadow-sm mb-4">
                 <div class="card-body">
                     <h4 class="card-title">SEO & Link Strategy</h4>
                     <hr>
-                    <p class="card-text">Grow your organic search traffic, maximize your backlinks, and analyze the competitors to discover new marketing opportunities.</p>
+                    <p class="lead">Grow your organic search traffic, maximize your backlinks, and analyze the competitors to discover new marketing opportunities.</p>
                 </div>
             </div>
             <div class="w-100 d-none d-sm-block d-md-none"><!-- wrap every 2 on sm--></div>
@@ -48,7 +48,7 @@ https://www.w3schools.com/howto/howto_css_hero_image.asp
                 <div class="card-body">
                     <h4 class="card-title">Paid Search Advertising</h4>
                     <hr>
-                    <p class="card-text">Find people looking for the services your provide <i>right now.</i></p>
+                    <p class="lead">Find people looking for the services your provide <i>right now.</i></p>
                 </div>
             </div>
             <div class="w-100 d-none d-md-block"><!-- wrap every 3 on md--></div>
@@ -56,7 +56,7 @@ https://www.w3schools.com/howto/howto_css_hero_image.asp
                 <div class="card-body">
                     <h4 class="card-title">Social Media Advertising</h4>
                     <hr>
-                    <p class="card-text">Build your brand and reach new people on platforms like Facebook, Instagram, and Reddit.</p>
+                    <p class="lead">Build your brand and reach new people on platforms like Facebook, Instagram, and Reddit.</p>
                 </div>
             </div>
             <div class="w-100 d-none d-sm-block d-md-none"><!-- wrap every 2 on sm--></div>
@@ -64,25 +64,25 @@ https://www.w3schools.com/howto/howto_css_hero_image.asp
                 <div class="card-body">
                     <h4 class="card-title">Mobile Marketing</h4>
                     <hr>
-                    <p class="card-text">Increase sales by targeting people on the go.</p>
+                    <p class="lead">Increase sales by targeting people on the go.</p>
                 </div>
             </div>
             <div class="card shadow-sm mb-4">
                 <div class="card-body">
                     <h4 class="card-title">Influencer Marketing</h4>
                     <hr>
-                    <p class="card-text">Reach out to influential people in your area to drive sales and increase brand awareness.</p>
+                    <p class="lead">Reach out to influential people in your area to drive sales and increase brand awareness.</p>
                 </div>
             </div>
         </div>
 
     <!-- START THE FEATURETTES -->
 
-    <hr class="featurette-divider">
+    <!-- <hr class="featurette-divider"> -->
 
     <h2 class="services-heading" style="margin-bottom: 2rem;">Our Process</h2>
 
-    <div class="shadow-sm card">
+    <div class="shadow-sm card mb-4" id="our-process-card">
         <div class="card-body">
             <div class="svg-container-outside">
                 <div class="svg-container-inside">
@@ -123,7 +123,7 @@ https://www.w3schools.com/howto/howto_css_hero_image.asp
                                 </g>
                                 <!-- secondary 4 -->
                                 <g id="secondary-circle-4">
-                                    <g><use class="secondary secondary-circle-4" xlink:href="#k2teMOj5ZU" opacity="0" fill="#3673d4" fill-opacity="1"></use></g>
+                                    <g id="secondary-circle-3"><use class="secondary secondary-circle-4" xlink:href="#k2teMOj5ZU" opacity="0" fill="#3673d4" fill-opacity="1"></use></g>
                                     <g id="b2aBBC4ZKz"><use class="secondary secondary-circle-4" xlink:href="#b9sR3LS7m" opacity="0" fill="#3673d4" fill-opacity="1"></use></g>
                                     <g>
                                         <g><use class="secondary secondary-circle-4" xlink:href="#c3iwd83NqB" opacity="0" fill="#3673d4" fill-opacity="0.8"></use></g>
@@ -144,7 +144,7 @@ https://www.w3schools.com/howto/howto_css_hero_image.asp
                                     <g><use class="circle circle-3" xlink:href="#bGKWRbXb4" opacity="1" fill="#3673d4" fill-opacity="1"></use></g>
                                 </g>
                                 <!-- secondary 3 -->
-                                <g id="secondary-circle-3">
+                                <g>
                                     <g><use class="secondary secondary-circle-3" xlink:href="#c1WiO1iCRg" opacity="0" fill="#3673d4" fill-opacity="1"></use></g>
                                     <g id="d6qcWN4dJu"><use class="secondary secondary-circle-3" xlink:href="#c6rSbWKL" opacity="0" fill="#3673d4" fill-opacity="1"></use></g>
                                     <g>
@@ -213,9 +213,10 @@ https://www.w3schools.com/howto/howto_css_hero_image.asp
                         <img class="featurette-image img-fluid mx-auto" src="{{ url_for('static', filename='images/blue_arrow_right.svg') }}" alt="Generic placeholder image">
                     </div>
                 </div>
-                <div class="col-12 col-sm-8 order-3 order-sm-2">
-                    <h2 class="featurette-heading">Initial Consult. <span class="text-muted">Set the wheels in motion!</span></h2>
-                    <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+                <div class="col-12 col-sm-8 order-3 order-sm-2 circle-text">
+                    <h4>Initial Consult. <span class="text-muted">Set the wheels in motion!</span></h2>
+                    <hr>
+                    <p class="lead">We assess your current marketing efforts in order to figure out what's working for you and what can be improved.</p>
                 </div>
             </div>
 
@@ -230,9 +231,10 @@ https://www.w3schools.com/howto/howto_css_hero_image.asp
                         <img class="featurette-image img-fluid mx-auto" src="{{ url_for('static', filename='images/blue_arrow_right.svg') }}" alt="Generic placeholder image">
                     </div>
                 </div>
-                <div class="col-12 col-sm-8 order-3 order-sm-2">
-                    <h2 class="featurette-heading">Goal Setting. <span class="text-muted">Create high-impact action items.</span></h2>
-                    <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+                <div class="col-12 col-sm-8 order-3 order-sm-2 circle-text">
+                    <h4>Goal Setting. <span class="text-muted">Create high-impact action items.</span></h4>
+                    <hr>
+                    <p class="lead">We'll figure out how you want to expand your business, and set some realistic milestones to mark your progress. If not quite sure about your growth plans, we can work together to figure out some priorities.</p>
                 </div>
             </div>
 
@@ -247,9 +249,10 @@ https://www.w3schools.com/howto/howto_css_hero_image.asp
                         <img class="featurette-image img-fluid mx-auto" src="{{ url_for('static', filename='images/blue_arrow_right.svg') }}" alt="Generic placeholder image">
                     </div>
                 </div>
-                <div class="col-12 col-sm-8 order-3 order-sm-2">
-                    <h2 class="featurette-heading">Goal Setting. <span class="text-muted">Create high-impact action items.</span></h2>
-                    <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+                <div class="col-12 col-sm-8 order-3 order-sm-2 circle-text">
+                    <h4>Strategy & Tactics. <span class="text-muted">Define the path that's right for your business.</span></h4>
+                    <hr>
+                    <p class="lead">Now that we've set some goals, we dig into the details of how we'll reach them. We'll create a detailed plan of action that works with you and your business.</p>
                 </div>
             </div>
 
@@ -264,30 +267,53 @@ https://www.w3schools.com/howto/howto_css_hero_image.asp
                         <img class="featurette-image img-fluid mx-auto" src="{{ url_for('static', filename='images/blue_arrow_right.svg') }}" alt="Generic placeholder image">
                     </div>
                 </div>
-                <div class="col-12 col-sm-8 order-3 order-sm-2">
-                    <h2 class="featurette-heading">Goal Setting. <span class="text-muted">Create high-impact action items.</span></h2>
-                    <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+                <div class="col-12 col-sm-8 order-3 order-sm-2 circle-text">
+                    <h4>Execute, Analyze & Iterate. <span class="text-muted">Drive growth with insights.</span></h4>
+                    <hr>
+                    <p class="lead">Once we put our plan into action, we crunch the numbers daily to see how well your campaigns are performing. Adjustments are made to ensure the best possible performance.</p>
                 </div>
             </div>
         </div>
     </div>
 
-    <hr class="featurette-divider">
+    <!-- <hr class="featurette-divider"> -->
 
     <h2 class="services-heading">Why Us?</h2>
 
-    <hr class="featurette-divider">
+    <div class="shadow-sm card mb-4">
+        <div class="card-body">
+            <h4>We take the time to understand your business.</h4>
+            <hr>
+            <p class="lead">Our team of marketers and scientists know how to analyze businesses, as well your target markets and audiences. Our approach can be tailored to any type of business.</p>
+        </div>
+    </div>
 
-    <!-- /END THE FEATURETTES -->
+    <div class="card-deck">
+        <div class="shadow-sm card mb-4">
+            <div class="card-body">
+                <h4>Small Business</h4>
+                <hr>
+                <p class="lead">Many of us have owned small businesses, or worked in the start-up community. We understand the challenges of growing a business, and will help you develop a clear plan to scale your business up.</p>
+            </div>
+        </div>
+        <div class="shadow-sm card mb-4">
+            <div class="card-body">
+                <h4>Dealing with Data</h4>
+                <hr>
+                <p class="lead">Our team has years of data science and analysis experience. We'll help you analyze key business and advertising metrics, so you'll know exactly what's going on.</p>
+            </div>
+        </div>
+        <div class="shadow-sm card mb-4">
+            <div class="card-body">
+                <h4>Focusing on you</h4>
+                <hr>
+                <p class="lead">We want to understand what works for your business. Nothing makes us smile like a happy customer with fewer headaches, and more money in their pocket!</p>
+            </div>
+        </div>
+    </div>
 
-  </div><!-- /.container -->
+</div><!-- /.container -->
 
-
-  <!-- FOOTER -->
-  <footer class="container">
-    <p class="float-right"><a href="#">Back to top</a></p>
-    <p>&copy; 2017-2018 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
-  </footer>
 {% endblock %}
 
 {% block scripts %}
@@ -299,14 +325,14 @@ https://www.w3schools.com/howto/howto_css_hero_image.asp
 
     $(".circle-btn").click(function() {
         $('html,body').animate({
-            scrollTop: $(".svg-container-outside").offset().top},
+            scrollTop: $("#our-process-card").offset().top},
             'slow');
     });
 
     // action when clicking left arrow button
     $(".prev-btn").click(function() {
         $('html,body').animate({
-            scrollTop: $(".svg-container-outside").offset().top},
+            scrollTop: $("#our-process-card").offset().top},
             'slow');
         active_text_id = get_active_id();
         prev_id = active_text_id - 1;
@@ -320,7 +346,7 @@ https://www.w3schools.com/howto/howto_css_hero_image.asp
     // action when clicking left arrow button
     $(".next-btn").click(function() {
         $('html,body').animate({
-            scrollTop: $(".svg-container-outside").offset().top},
+            scrollTop: $("#our-process-card").offset().top},
             'slow');
         active_text_id = get_active_id();
         next_id = active_text_id + 1;
@@ -328,7 +354,6 @@ https://www.w3schools.com/howto/howto_css_hero_image.asp
         circle_id = 'circle-' + next_id;
         color_circle(circle_id);
         next_elt = document.getElementById("secondary-" + circle_id);
-        console.log(next_elt)
         next_elt.scrollIntoView();
     });
 

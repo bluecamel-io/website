@@ -25,10 +25,10 @@ def index():
 # @app.route('/healthcare')
 # def healthcare():
 #     return render_template('healthcare.html', title='Healthcare')
-
-@app.route('/about')
-def about():
-    return render_template('about.html', title='About')
+#
+# @app.route('/about')
+# def about():
+#     return render_template('about.html', title='About')
 
 @app.route('/contact', methods=['GET', 'POST'])
 def contact():
