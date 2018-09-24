@@ -3,6 +3,7 @@
 ### Things to change/fix:
 
 - sticky footer
+- add split into pairs of cards ('Why Us' card deck) for tablets
 - too many 'Please ...' in contact form input files
 
 ---
