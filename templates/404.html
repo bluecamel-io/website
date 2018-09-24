@@ -1,15 +1,26 @@
 {% extends "base.html" %}
 
+{% block head %}
+    {{ super() }}
+    <link href="{{ url_for('static', filename='css/styles.css') }}" rel="stylesheet">
+{% endblock %}
+
 {% block content %}
     <div class="container">
         <div class="row">
-            <div class="col-sm-12 text-center" style="padding-top: 125px;"><span style="font-size:1.5em">The page you are looking for can't be found!</span></div>
+            <div class="col-sm-12 text-center" style="padding-top: 125px;">
+                <span style="font-size:1.5em">The page you are looking for can't be found!</span>
+            </div>
         </div>
         <div class="row">
-            <div class="col-sm-12 text-center" style="padding-top: 15px;"><strong><span style="font-size: 1.25em">Error Code: 404</span></strong></div>
+            <div class="col-sm-12 text-center" style="padding-top: 15px;">
+                <strong><span style="font-size: 1.25em">Error Code: 404</span></strong>
+            </div>
         </div>
         <div class="row">
-            <div class="col-sm-12 text-center" style="padding-top: 15px;"><a href="/">Back to the home page</a></div>
+            <div class="col-sm-12 text-center" style="padding-top: 15px;">
+                <a class="btn btn-lg btn-primary" href="{{ url_for('index') }}" role="button">Back to Home</a>
+            </div>
         </div>
     </div>
 {% endblock %}
