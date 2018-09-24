@@ -3,9 +3,7 @@
 ### Things to change/fix:
 
 - sticky footer
-- change favicon to camel
-- change icon on p&r analytics slack
-
+- too many 'Please ...' in contact form input files
 
 ---
 
