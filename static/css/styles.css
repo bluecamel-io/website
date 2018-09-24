@@ -23,7 +23,7 @@ body {
 }
 
 .card {
-    min-height: 200px;
+    /* min-height: 200px; */
 }
 
 
@@ -73,14 +73,24 @@ body {
 }
 .marketing h2 {
   font-weight: 400;
+  margin-bottom: 2rem;
+  margin-left: 1rem;
+  font-weight: 400;
+  font-size: 3rem;
 }
+
+.card h4 {
+    color: #3673d4;
+    /* color: #039be5; */
+}
+
 .marketing .col-lg-4 p {
   margin-right: .75rem;
   margin-left: .75rem;
 }
 
 .marketing .card {
-    margin-top: 2rem;
+    min-height: 250px;
 }
 
 .marketing h1 {
@@ -90,18 +100,19 @@ body {
 /* Services
 -------------------------------------------------- */
 
-.services-heading {
-    margin-bottom: -1rem;
+/* .services-heading {
+    margin-bottom: 2rem;
+    margin-left: 1rem;
     font-weight: 400;
     font-size: 3rem;
-}
+} */
 
 
 /* Featurettes
 -------------------------------------------------- */
 
 .featurette-divider {
-  margin: 5rem 0; /* Space out the Bootstrap <hr> more */
+  margin: 2rem 0; /* Space out the Bootstrap <hr> more */
 }
 
 /* Thin out the marketing headings */
@@ -117,6 +128,20 @@ body {
 
 .featurette-active {
     display: flex;
+}
+
+.featurette-image {
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    margin: auto;
+    position: absolute;
+    top: 0; left: 0; bottom: 0; right: 0;
+    width: 2rem;
+}
+
+.our-process-btn {
+    height: 4rem;
 }
 
 /* Jumbotron
