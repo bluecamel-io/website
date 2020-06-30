@@ -55,7 +55,6 @@ def contact():
 
         # create a personalization object to hold all the recipient emails
         to_emails = [
-            Email(email='providence.can@gmail.com ', name='Gideon Providence'),
             Email(email='alecross89@gmail.com', name='Alec Ross'),
             Email(email='andrew.ross.mail@gmail.com', name='Andrew Ross')]
         personalization = Personalization()
